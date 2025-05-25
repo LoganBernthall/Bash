@@ -13,3 +13,4 @@ echo "Running $APP_NAME with log level $LOG_LEVEL"
 Prompt
 ToDoPrinter
 ToDoChecker
+ToDoMenu
