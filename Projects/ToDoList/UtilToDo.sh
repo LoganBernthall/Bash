@@ -99,11 +99,24 @@ Option3 () {
 echo "Modify a task:"
 column -s, -t < $Specific_File
 #Print into terminal
-read -p "Enter the line # you wish to modify" Line
+read -p "Enter the line # you wish to modify: " Line
 
 #Ignore header
-$ActualLine=$(($Line + 1))
-echo $ActualLine
+ActualLine=$(($Line + 0))
+echo "Modifying line $ActualLine ..."
+
+read -p "Enter your new task name " TaskMod
+read -p "Enter Date " DateMod
+read -p "Completed Y/N? " CompMod
+read -p "Enter date completed? " DateCompMod
+
+sed -i "${ActualLine}s|.*|\"${Task}\",${DateMod},${CompMod},${DateCompMod}|" "$Specific_File"
+
+#sed -i "
+
+#sed-i "\"$Task\",$DateMod,$CompMod,$DateCompMod" "$Specific_File"
+#sed "$ActualLine" "\"$Task\",$DateMod,$CompModn,$DateCompMod"
+
 
 }
 Option4 () {
