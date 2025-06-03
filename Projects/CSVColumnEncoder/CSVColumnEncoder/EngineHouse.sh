@@ -10,8 +10,12 @@ CsvDropDirectory="./FileDrop" #Area in which where the csv files will be dropped
 CsvOutputDirectory="./FileOutputs" #Area in which the encoded files will be outputted
 PyScript="./PythonEncoder.py" #Python script for the encoder
 
+# Ensure the output directory exists
+mkdir -p "$CsvOutputDirectory"
+
 Execute (){
 
+#Process each CSV file
 for file in "$CsvDropDirectory"/*.csv; do
     filename=$(basename "$file")
     output_file="$CsvOutputDirectory/encoded_$filename"
@@ -20,6 +24,5 @@ for file in "$CsvDropDirectory"/*.csv; do
     python3 "$PyScript" "$file" "$output_file"
 done
 
-echo "All files processed and saved to $ENCODED_DIR"
-
+echo "All files processed and saved to $CsvOutputDirectory"
 }
