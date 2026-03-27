@@ -4,7 +4,7 @@ Mixture of Bash scripts and projects that you may find useful
 
 ---
 
-## Contects:
+## Contents:
 
 [Random Scripts](https://github.com/LoganBernthall/Bash/tree/main/Random%20Scripts)
 
